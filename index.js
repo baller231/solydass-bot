@@ -1,3 +1,17 @@
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000; // Render will automatically set a port
+
+// Create a simple route to satisfy Render's need for an open port
+app.get('/', (req, res) => {
+    res.send('Telegram bot is running!');
+});
+
+// Start the express server
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
 const TelegramBot = require('node-telegram-bot-api');
 const { text } = require('stream/consumers');
 const token = '7282853309:AAHi51_84YSjoJouk3Vqoze7sVVX0Pkalc4';
